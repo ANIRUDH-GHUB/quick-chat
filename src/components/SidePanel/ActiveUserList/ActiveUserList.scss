@@ -1,0 +1,17 @@
+.active-user {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 20px 0;
+  }
+  .user-count {
+    border-radius: 50% 50%;
+    background: rgb(228, 226, 238);
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    margin-right: 10%;
+  }
+}

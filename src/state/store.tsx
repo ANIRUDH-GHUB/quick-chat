@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import articleReducer from "./slices/archiveSlice";
+import contactReducer from "./slices/contactSlice";
 
 export const store = configureStore({
   reducer: {
     archive: articleReducer,
+    contacts: contactReducer,
   },
 });
 

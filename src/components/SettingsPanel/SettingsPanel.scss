@@ -1,0 +1,6 @@
+.setting-panel {
+  width: 20%;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
