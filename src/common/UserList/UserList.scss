@@ -1,0 +1,28 @@
+@import "./../../variables.scss";
+.user-list {
+  max-height: 400px;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .profile-img {
+    padding: 0 13px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      cursor: pointer;
+      :hover {
+        border-radius: 15px;
+        background-color: $user-box-background-color;
+      }
+    }
+  }
+  .user-details {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+}

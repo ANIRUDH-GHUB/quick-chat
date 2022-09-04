@@ -1,0 +1,55 @@
+@import "./../../../variables.scss";
+.setting-panel {
+  .user-box {
+    margin: 0;
+    .user-box-wrapper {
+      .user-profile-img {
+        font-size: 24px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+      .user-details {
+        color: $dar-grey;
+        align-items: start;
+        .user-email {
+          display: flex;
+          padding-left: 30px;
+          margin: 5px 0;
+        }
+        .user-name {
+          margin: 5px 0;
+          display: flex;
+          padding-left: 30px;
+        }
+        .mail-icon {
+          margin-right: 10px;
+          color: black;
+        }
+        .profile-icon {
+          color: black;
+          margin-right: 10px;
+        }
+        .archive-button {
+          cursor: pointer;
+          margin: auto;
+          margin-top: 20px;
+          text-align: center;
+          padding: 12px 30px;
+          border-radius: 10px;
+          border: 2px solid #0c39fe;
+          display: flex;
+          color: #0c39fe;
+          .archive-icon {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}

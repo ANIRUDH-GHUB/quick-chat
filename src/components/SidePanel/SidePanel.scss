@@ -1,0 +1,19 @@
+.sidebar {
+  width: 20%;
+  padding: 0 20px;
+  @media (max-width: 1024px) {
+    width: 33%;
+  }
+  .app-header {
+    display: flex;
+    .app-logo svg {
+      height: 35px;
+      width: 35px;
+      color: #a9bff6;
+    }
+    .app-title {
+      font-size: 15px;
+      margin: 0 14px;
+    }
+  }
+}
