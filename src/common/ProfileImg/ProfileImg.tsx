@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { userBgColors } from "../../constants/Constants";
+import React from "react";
 import "./ProfileImg.scss";
 
 interface ProfileImgProps {
@@ -30,6 +29,7 @@ const ProfileImg: React.FC<ProfileImgProps> = ({
     >
       <img
         src={src}
+        alt="profile-pic"
         style={{
           backgroundColor: bgColor || defaultBgColor,
         }}

@@ -1,10 +1,9 @@
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import UserList from "../../../common/UserList/UserList";
 import { STATE } from "../../../model/Interfaces";
-import { getRandomBgColor } from "../../../utils/CommonUtil";
 import "./ActiveUserList.scss";
 
 const ActiveUserList: React.FC = () => {
@@ -14,20 +13,23 @@ const ActiveUserList: React.FC = () => {
   );
   const [collapse, setCollapse] = useState<boolean>(false);
 
-  const isArchiveUser = (id: string) => {
-    return archive.archivedUsers?.[id];
-  };
+  const isArchiveUser = useCallback(
+    (id: string) => {
+      return archive.archivedUsers?.[id];
+    },
+    [archive.archivedUsers]
+  );
 
-  const getActiveUserList = () => {
+  const getActiveUserList = useCallback(() => {
     let users = contacts?.contactList?.filter(
       (contact) => !isArchiveUser(contact.id)
     );
     setActiveUsers(users);
-  };
+  }, [contacts?.contactList, isArchiveUser]);
 
   useEffect(() => {
     getActiveUserList();
-  }, [contacts.contactList, archive]);
+  }, [contacts.contactList, archive, getActiveUserList]);
 
   return (
     <div className="active-user">

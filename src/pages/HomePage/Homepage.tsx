@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getContactList());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="layout">
       <div className="layout-container">

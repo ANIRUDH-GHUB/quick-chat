@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProfileImg from "../../common/ProfileImg/ProfileImg";
 import { userImageUrl } from "../../constants/Constants";
 import { Message, STATE } from "../../model/Interfaces";
 import { setMessageFromApi } from "../../state/slices/contactSlice";
-import messageJson from "./../../assets/json/messages.json";
 import "./ChatPanel.scss";
 import MessageArea from "./MessageArea/MessageArea";
 
@@ -17,23 +16,26 @@ const ChatPanel: React.FC = () => {
 
   const chatRef = useRef<HTMLUListElement>(null);
 
+  const getMessagesForContact = useCallback(
+    (id: string) => {
+      setMessages(messageResponse[id]);
+    },
+    [messageResponse]
+  );
+
   useEffect(() => {
     dispatch(setMessageFromApi());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     getMessagesForContact(selectedUser);
-  }, [selectedUser, messageResponse]);
+  }, [selectedUser, messageResponse, getMessagesForContact]);
 
   useEffect(() => {
     if (chatRef.current) {
       chatRef.current.scroll(0, chatRef.current.scrollHeight);
     }
   });
-
-  const getMessagesForContact = (id: string) => {
-    setMessages(messageResponse[id]);
-  };
 
   const getImageSrc = (id: string): string => {
     return (
