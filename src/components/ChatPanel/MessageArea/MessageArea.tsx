@@ -4,12 +4,21 @@ import { faPaperclip, faFaceSmile } from "@fortawesome/free-solid-svg-icons";
 import Picker, { IEmojiData } from "emoji-picker-react";
 import "./MessageArea.scss";
 
-const MessageArea: React.FC = () => {
+interface MessageProps {
+  callback: (message: string) => void;
+}
+
+const MessageArea: React.FC<MessageProps> = ({ callback }) => {
   const [message, setMessage] = useState("");
   const [openEmoji, setOpenEmoji] = useState(false);
 
   const onEmojiClick = (event: any, emojiObject: IEmojiData) => {
     setMessage(message + emojiObject.emoji);
+  };
+
+  const onSend = (message: string) => {
+    if (message) callback(message);
+    setMessage("");
   };
 
   return (
@@ -40,7 +49,7 @@ const MessageArea: React.FC = () => {
             </div>
           )}
         </div>
-        <div className="send-button">
+        <div className="send-button" onClick={() => onSend(message)}>
           <p>Send</p>
         </div>
       </div>

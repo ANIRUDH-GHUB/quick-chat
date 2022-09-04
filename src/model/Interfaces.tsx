@@ -12,6 +12,8 @@ export interface ArchiveState {
 export interface ContactList {
   contactList: User[];
   selectedUser: string;
+  userStatus?: boolean;
+  messages: { [key: string]: Message[] };
 }
 export interface User {
   id: string;

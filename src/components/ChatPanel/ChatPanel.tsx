@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ProfileImg from "../../common/ProfileImg/ProfileImg";
 import { userImageUrl } from "../../constants/Constants";
 import { Message, STATE } from "../../model/Interfaces";
+import { setMessageFromApi } from "../../state/slices/contactSlice";
 import messageJson from "./../../assets/json/messages.json";
 import "./ChatPanel.scss";
 import MessageArea from "./MessageArea/MessageArea";
@@ -10,9 +11,19 @@ import MessageArea from "./MessageArea/MessageArea";
 const ChatPanel: React.FC = () => {
   const { contacts } = useSelector((state: STATE) => state);
   const [messages, setMessages] = useState<Message[]>();
-  const { contactList, selectedUser } = contacts;
+  const { userStatus } = contacts;
+  const { contactList, selectedUser, messages: messageResponse } = contacts;
+  const dispatch = useDispatch();
 
   const chatRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    dispatch(setMessageFromApi());
+  }, []);
+
+  useEffect(() => {
+    getMessagesForContact(selectedUser);
+  }, [selectedUser, messageResponse]);
 
   useEffect(() => {
     if (chatRef.current) {
@@ -21,7 +32,7 @@ const ChatPanel: React.FC = () => {
   });
 
   const getMessagesForContact = (id: string) => {
-    setMessages(messageJson.messages);
+    setMessages(messageResponse[id]);
   };
 
   const getImageSrc = (id: string): string => {
@@ -31,9 +42,17 @@ const ChatPanel: React.FC = () => {
     );
   };
 
-  useEffect(() => {
-    getMessagesForContact(selectedUser);
-  }, [selectedUser]);
+  const appendMessage = (msg: string) => {
+    const newMessage = {
+      id: messages?.length ? `${messages.length + 1}` : "1",
+      author: "0",
+      status: "Success",
+      data: msg,
+      time: "1662202747412",
+    };
+    if (messages) setMessages(() => [...messages, newMessage]);
+  };
+
   return (
     <div className="chat-panel">
       <div className="chat-panel-wrapper">
@@ -60,11 +79,18 @@ const ChatPanel: React.FC = () => {
                         ? ""
                         : contactList[parseInt(selectedUser) - 1].bgcolor
                     }
+                    badge={
+                      message.author === "0"
+                        ? userStatus
+                          ? "green"
+                          : "red"
+                        : "green"
+                    }
                   />
                 </li>
               ))}
             </ul>
-            <MessageArea />
+            <MessageArea callback={appendMessage} />
           </div>
         )}
       </div>

@@ -3,4 +3,15 @@
     border-radius: 50%;
     max-width: 100%;
   }
+  .user-badge {
+    border: 1px solid white;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(419%, -180%);
+  }
+  .user-icon {
+    background: green;
+  }
 }

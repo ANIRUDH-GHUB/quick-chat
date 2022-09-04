@@ -5,6 +5,9 @@ import ProfileImg from "../../../common/ProfileImg/ProfileImg";
 import "./UserBox.scss";
 import ToggleButton from "../../../common/ToggleButton/ToggleButton";
 import { userImageUrl } from "../../../constants/Constants";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserStatus } from "../../../state/slices/contactSlice";
+import { STATE } from "../../../model/Interfaces";
 
 const UserBox: React.FC = () => {
   const userDetails = {
@@ -13,9 +16,13 @@ const UserBox: React.FC = () => {
   };
 
   const [status, setStatus] = useState("Active");
+  const { contacts } = useSelector((state: STATE) => state);
+  const { userStatus } = contacts;
+  const dispatch = useDispatch();
 
   const toggleStatus = () => {
-    setStatus(status === "Active" ? "Offline" : "Active");
+    dispatch(setUserStatus(!userStatus));
+    setStatus(userStatus ? "Offline" : "Active");
   };
   return (
     <div className="user-box">

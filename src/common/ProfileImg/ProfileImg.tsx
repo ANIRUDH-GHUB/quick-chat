@@ -7,6 +7,7 @@ interface ProfileImgProps {
   width?: string;
   height?: string;
   bgColor?: string;
+  badge?: string;
 }
 
 const ProfileImg: React.FC<ProfileImgProps> = ({
@@ -14,6 +15,7 @@ const ProfileImg: React.FC<ProfileImgProps> = ({
   width,
   height,
   bgColor,
+  badge,
 }) => {
   const defaultWidth = "80px";
   const defaultHeight = "80px";
@@ -32,6 +34,11 @@ const ProfileImg: React.FC<ProfileImgProps> = ({
           backgroundColor: bgColor || defaultBgColor,
         }}
       />
+      {badge && (
+        <div className="user-badge" style={{ backgroundColor: badge }}>
+          <div className="user-icon"></div>
+        </div>
+      )}
     </div>
   );
 };
