@@ -4,7 +4,7 @@ import memberJSON from "./../../assets/json/members.json";
 
 const initialState: ContactList = {
   contactList: [],
-  selectedUser: "",
+  selectedUser: "1",
 };
 
 export const contactSlice = createSlice({

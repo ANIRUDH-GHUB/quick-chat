@@ -45,22 +45,22 @@
     {
       "id": "7",
       "author": "0",
-      "data": "<p>Sure, please check below link to more userful information <a>http://mazepizel.com</a></p>",
-      "status": "Success",
-      "time": "1662202747412"
-    },
-    {
-      "id": "8",
-      "author": "1",
-      "data": "<p>Sure, please check below link to more userful information <a>http://mazepizel.com</a></p>",
+      "data": "<img src='https://www.xtrafondos.com/thumbs/1_4156.jpg'/>",
       "status": "Success",
       "time": "1662202747412"
     },
     {
       "id": "9",
       "author": "1",
-      "data": "<p>Sure, please check below link to more userful information <a>http://mazepizel.com</a></p>",
+      "data": "<img src='https://www.malemodelscene.net/wp-content/uploads/2021/07/Shawn-Mendes-Wonderland-Magazine-Max-Montgomery-10.jpg' />",
       "status": "Success",
+      "time": "1662202747412"
+    },
+    {
+      "id": "8",
+      "author": "1",
+      "status": "Success",
+      "data": "<p>Sure, please check below link to more userful information <a href='http://mazepizel.com' target='_blank'>http://mazepizel.com</a></p>",
       "time": "1662202747412"
     }
   ]

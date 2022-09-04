@@ -5,70 +5,80 @@
       "firstname": "Henry",
       "lastname": "Boyd",
       "email": "henryboid@gmail.com",
-      "avatar": "one"
+      "avatar": "one",
+      "bgcolor": "#EDC126"
     },
     {
       "id": "2",
       "firstname": "Martha",
       "lastname": "Curtis",
       "email": "marthacurtis@gmail.com",
-      "avatar": "two"
+      "avatar": "two",
+      "bgcolor": "#3DBE29"
     },
     {
       "id": "3",
       "firstname": "Philip",
       "lastname": "Tucker",
       "email": "philiptucker@gmail.com",
-      "avatar": "three"
+      "avatar": "three",
+      "bgcolor": "#8D3DAF"
     },
     {
       "id": "4",
       "firstname": "Chrstime",
       "lastname": "Reid",
       "email": "christinereid@gmail.com",
-      "avatar": "four"
+      "avatar": "four",
+      "bgcolor": "#FF6263"
     },
     {
       "id": "5",
       "firstname": "Jerry",
       "lastname": "Guzman",
       "email": "jerryguzman@gmail.com",
-      "avatar": "five"
+      "avatar": "five",
+      "bgcolor": "#EDC126"
     },
     {
       "id": "6",
       "firstname": "Russel",
       "lastname": "Williams",
       "email": "russelwilliams@gmail.com",
-      "avatar": "six"
+      "avatar": "six",
+      "bgcolor": "#FF6263"
     },
     {
       "id": "7",
       "firstname": "Heron",
       "lastname": "Amma",
       "email": "heronamma@gmail.com",
-      "avatar": "seven"
+      "avatar": "seven",
+      "bgcolor": "#3DBE29"
     },
     {
       "id": "8",
       "firstname": "Jim",
       "lastname": "Mikki",
       "email": "jimmikki@gmail.com",
-      "avatar": "eight"
+      "avatar": "eight",
+      "bgcolor": "#F4CE6A"
     },
     {
       "id": "9",
       "firstname": "Manisha",
       "lastname": "Michele",
       "email": "manishamichele@gmail.com",
-      "avatar": "nine"
+      "avatar": "nine",
+      "bgcolor": "#E21717"
     },
     {
       "id": "10",
       "firstname": "Circe",
       "lastname": "Victor",
       "email": "circevictor@gmail.com",
-      "avatar": "ten"
+      "avatar": "ten",
+      "bgcolor": "#207398"
     }
   ]
 }

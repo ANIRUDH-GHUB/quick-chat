@@ -22,7 +22,6 @@ const ArchivedUserList: React.FC = () => {
     let users = contacts?.contactList?.filter((contact) =>
       isArchiveUser(contact.id)
     );
-    users = users.map((user) => ({ ...user, bgcolor: getRandomBgColor() }));
     setActiveUsers(users);
   };
 
@@ -33,7 +32,7 @@ const ArchivedUserList: React.FC = () => {
   return (
     <div className="active-user">
       <div className="header" onClick={() => setCollapse(!collapse)}>
-        <h3>Active Conversations</h3>
+        <h3>Archived Conversations</h3>
         <div className="user-count">
           <span>{activeUsers?.length}</span>
         </div>

@@ -22,13 +22,12 @@ const ActiveUserList: React.FC = () => {
     let users = contacts?.contactList?.filter(
       (contact) => !isArchiveUser(contact.id)
     );
-    users = users.map((user) => ({ ...user, bgcolor: getRandomBgColor() }));
     setActiveUsers(users);
   };
 
   useEffect(() => {
     getActiveUserList();
-  }, [contacts, archive]);
+  }, [contacts.contactList, archive]);
 
   return (
     <div className="active-user">

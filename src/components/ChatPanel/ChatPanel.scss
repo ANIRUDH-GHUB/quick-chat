@@ -14,11 +14,16 @@
   }
   .conversation-container {
     padding: 20px 20px;
-    list-style: none;
-    max-height: calc(100% - 100px);
-    overflow: scroll;
-    &::-webkit-scrollbar {
-      display: none;
+    height: 100%;
+    & > ul {
+      list-style: none;
+      overflow: auto;
+      max-height: calc(100% - 110px);
+      position: relative;
+      padding: 0;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
     li {
       padding: 20px 0;
@@ -32,6 +37,9 @@
       .user-message {
         background-color: $message-you;
       }
+      .profile-img {
+        padding: 0 0 0 15px;
+      }
     }
     .message-left {
       display: flex;
@@ -41,14 +49,25 @@
       .user-message {
         background-color: $message-other;
       }
-    }
-    .profile-img {
-      padding: 0 5px;
+      .profile-img {
+        padding: 0 15px 0 0;
+      }
     }
     .user-message {
-      padding: 20px 20px;
+      padding: 5px 5px 1px;
       font-weight: 300;
       border-radius: 10px;
+      max-width: 50%;
+      @media (min-width: 768px) {
+        padding: 10px 10px 5px;
+      }
+      @media (min-width: 1024px) {
+        padding: 15px 15px 10px;
+      }
+      img {
+        border-radius: 10px;
+        max-width: 100%;
+      }
     }
   }
 }

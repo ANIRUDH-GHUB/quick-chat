@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ArchiveState } from "../../model/Interfaces";
 
 const initialState: ArchiveState = {
-  archivedUsers: { "1": true, "2": true },
+  archivedUsers: {},
 };
 
 export const archiveSlice = createSlice({
@@ -12,8 +12,8 @@ export const archiveSlice = createSlice({
     archiveUser: (state, action: PayloadAction<string>) => {
       state.archivedUsers[action.payload] = true;
     },
-    unArchiveUser: (state, action: PayloadAction<number>) => {
-      state.archivedUsers[action.payload] = true;
+    unArchiveUser: (state, action: PayloadAction<string>) => {
+      state.archivedUsers[action.payload] = false;
     },
   },
 });
